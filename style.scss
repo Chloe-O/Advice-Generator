@@ -1,0 +1,92 @@
+// Variables
+$background: #202632;
+$font-color: #cee3e9;
+$accent: #52ffa8;
+
+// Fonts
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: "Manrope", Arial, sans-serif;
+  background: $background;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .container {
+    position: relative;
+    background: #313a49;
+    max-width: 90%;
+    min-width: 360px;
+    width: 550px;
+    min-height: 250px;
+    border-radius: 20px;
+    padding: 50px 50px 70px 50px;
+
+    #advice-number {
+      text-align: center;
+      color: $accent;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    #advice {
+      position: relative;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 800;
+      line-height: normal;
+      color: $font-color;
+      padding: 20px 0 50px 0;
+
+      @media screen and (max-width: 500px) {
+        font-size: 24px;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        background: url(images/pattern-divider-desktop.svg) no-repeat center
+          center;
+        width: 100%;
+        height: 16px;
+        left: 0;
+        bottom: 0;
+      }
+    }
+
+    #next-advice-btn {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: $accent;
+      border: 0;
+      height: 65px;
+      width: 65px;
+      border-radius: 50%;
+      transition: 0.3s;
+
+      &:hover {
+        filter: drop-shadow(0 0 10px $accent);
+        cursor: pointer;
+        transition: 0.3s;
+      }
+    }
+  }
+}
